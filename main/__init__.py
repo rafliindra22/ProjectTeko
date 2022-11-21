@@ -24,6 +24,9 @@ CORS(app)
 # inisialisasi object flask sqlalchemy
 db = SQLAlchemy(app=app)
 
+def getApp():
+    return app
+
 # buat field database
 class ModelDb(db.Model):
     id = db.Column(db.Integer, primary_key = True)
