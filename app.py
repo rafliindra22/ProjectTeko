@@ -7,8 +7,8 @@ import sqlite3
 from sqlite3 import Error
 import os
 
-basedir = os.path.dirname(os.path.abspath(__file__))
-database = "sqlite:///" + os.path.join(basedir, "tekodb.sqlite")
+#basedir = os.path.dirname(os.path.abspath(__file__))
+#database = "sqlite:///" + os.path.join(basedir, "tekodb.sqlite")
 
 # inisialisasi object flask
 app = Flask(__name__)
