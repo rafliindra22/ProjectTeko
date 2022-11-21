@@ -12,6 +12,7 @@ database = "sqlite:///" + os.path.join(basedir, "tekodb.sqlite")
 
 # inisialisasi object flask
 app = Flask(__name__)
+
 app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL')
 
 # inisialisasi object flask restful
