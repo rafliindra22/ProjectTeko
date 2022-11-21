@@ -1,2 +1,2 @@
-from . import getApp
+from main import getApp
 app = getApp()
