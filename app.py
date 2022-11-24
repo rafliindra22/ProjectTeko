@@ -7,14 +7,13 @@ import sqlite3 as sql
 from sqlite3 import Error
 import os
 
-con = sql.conect('tekodb.sqlite')
-#basedir = os.path.dirname(os.path.abspath(__file__))
-#database = "sqlite:///" + os.path.join(basedir, "tekodb.sqlite")
+basedir = os.path.dirname(os.path.abspath(__file__))
+database = "sqlite:///" + os.path.join(basedir, "tekodb.sqlite")
 
 # inisialisasi object flask
 app = Flask(__name__)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = con
+app.config["SQLALCHEMY_DATABASE_URI"] = database
 
 # inisialisasi object flask restful
 api = Api(app)
