@@ -210,7 +210,7 @@ class JumlahProduk(Resource):
 
         response = {
             "status" : 200,
-            "message": "jumlah produk saat ini adalah : "+total
+            "message": "jumlah produk saat ini adalah : "+str(total)
         }
         return response
             
