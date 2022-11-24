@@ -3,17 +3,18 @@ from flask_restful import Api, Resource
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 #from sqlalchemy.sql import function
-import sqlite3
+import sqlite3 as sql
 from sqlite3 import Error
 import os
 
-basedir = os.path.dirname(os.path.abspath(__file__))
-database = "sqlite:///" + os.path.join(basedir, "tekodb.sqlite")
+con = sql.conect('tekodb.sqlite')
+#basedir = os.path.dirname(os.path.abspath(__file__))
+#database = "sqlite:///" + os.path.join(basedir, "tekodb.sqlite")
 
 # inisialisasi object flask
 app = Flask(__name__)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = database
+app.config["SQLALCHEMY_DATABASE_URI"] = con
 
 # inisialisasi object flask restful
 api = Api(app)
