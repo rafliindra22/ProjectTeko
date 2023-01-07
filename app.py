@@ -24,6 +24,10 @@ CORS(app)
 # inisialisasi object flask sqlalchemy
 db = SQLAlchemy(app=app)
 
+@app.route("/")
+def hello_world():
+    return "<p>Hello, World!</p>"
+
 # buat field database
 class ModelDb(db.Model):
     id = db.Column(db.Integer, primary_key = True)
@@ -193,9 +197,6 @@ class JumlahProduk(Resource):
     def get(self):
         jumQuery = ModelDb.query.all()
         
-        
-
-
         viewProduk = [
             {
                 "stock":produk.stockProduk
